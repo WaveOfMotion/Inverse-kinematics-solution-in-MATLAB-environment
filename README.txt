@@ -16,6 +16,8 @@ You can learn more about inverse kinematics from MathWorks: https://www.mathwork
 
 As an input for this solver is a matrix of target positions, a vector [jointA1, jointA2, jointA3, jointA4, jointA5, jointA6] is calculated. 
 
-Testing the written code, robot end effector position off-coursed of the given target position, and was likely do to not computing forward kiinematics to minimize the error. Also the algorithm parameters were used default and don't include adaptive parameterization when robot pose singularities occur leading to robot loosing course. The code provided the results, that robot gets back to home position safely without exceeding max velocity or joint limits. 
+Testing the written code, robot end effector position off-coursed of the given target position, and was likely do to not computing forward kiinematics to minimize the error. Also the algorithm parameters were used default and don't include adaptive parameterization when robot pose singularities occur leading to robot loosing course. The code provided the results, that robot gets back to home position with the same joint rotations from the start:
+
+initialConfig = [0, -70, 45, 0, 25, 15.8] ; lastValidConfig = [0, -70, 45, 0, 25, 15.8]  , without exceeding max velocity or joint limits. 
 
 As conclusion, an inverse kinematics implementation in C/C++ would ensure faster robot pose computation and by implementing algorithm logic inside the code would create a stronger mathematical model. In the early stages of the code development in MATLAB, writing DH parameters from finished robot model showed faster code execution. An imported robot model in .urdf format was used instead because extracting dh parameters from robot model took a long time and wasn't succesfull.
