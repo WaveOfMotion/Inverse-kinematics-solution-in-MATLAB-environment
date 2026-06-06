@@ -59,6 +59,10 @@ output = [time, smoothedResult];
 ```
 , where each 4 ms is a new vector of siix joint angles passed to UDP Send in Simulink. 
 
+Calling the function, first you must import the trajectory by entering command in the command window and call the function:
+```iecst
+output = GeneralizedKinematics(trajectory);
+```
 ## Conclusion
 Testing the application and the results, one was noticable that roboot end-effector drifted off from the XYZ giiven position. The application proved, that the robot
 came back to the home position with the given initial configuration:
