@@ -49,9 +49,9 @@ Every column of joint angle, you can think of as signal, because if you put join
 So I tell the code - filter the signal so that the spikes are under 1 Hz, and I do it in forward annd backward direction, so that the signal doesn't shift forward:
 ```iecst
 Fc = 1;  % Hz
-  Fs = 1 / timeStep;
-  [b, a] = butter(3, Fc / (Fs/2));
-  smoothedResult = filtfilt(b, a, result);
+Fs = 1 / timeStep;
+[b, a] = butter(3, Fc / (Fs/2));
+smoothedResult = filtfilt(b, a, result);
 ```
 , and the output:
 ```iecst
